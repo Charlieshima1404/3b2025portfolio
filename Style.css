@@ -181,7 +181,7 @@ body {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0);
   z-index: 2;
   overflow: hidden;
-  font-family: cursive;
+  font-family: 'Comic Sans MS';
   flex-direction: column;
   transform: rotateY('angle');
 }
@@ -230,7 +230,7 @@ body {
   color: #000;
   font-weight: bold;
   border: 2px solid #b8870b00;
-  font-family: cursive;
+  font-family: 'Comic Sans MS';
   border-radius: 12px;
   font-size: 1.2rem;
   outline: none;
@@ -428,4 +428,5 @@ body {
     flex: 0 0 auto;
     max-height: 30vh;
   }
+
 }
