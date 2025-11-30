@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+
+<!-- Scroll-down indicator arrow -->
+<section id="hero">
+  <img src="Assets/images/arrow.png" alt="Scroll Down" id="scrollArrow" class="arrow-image">
+</section>
+
+<!-- Intro/self section -->
+<section id="secondPage" class="content-section"> 
+  <div class="image-container">
+    <img src="Assets/images/2NDPAGE.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- Main navigation: links to archive & art sections -->
+<section id="fourthPage" class="content-section">
+  <div class="nav-buttons-container">
+    <img src="Assets/images/schoolarchivesign.png" 
+         class="nav-button school-archive-btn" 
+         data-target="schoolArchive">
+
+    <img src="Assets/images/CREATIONSIGN.png" 
+         class="nav-button art-works-btn" 
+         data-target="artWorks">
+  </div>
+</section>
+
+<!-- School projects section (dropdown + dynamic list) -->
+<section id="schoolArchive" class="content-section">
+  <div class="image-container">
+    <img src="Assets/images/schoolarchivepage.png" alt="School Projects">
+  </div>
+
+  <!-- Folder-style dropdown container -->
+  <div class="folder-box">
+    <div class="folder-content">
+      <select id="subjectSelect" class="subject-dropdown">
+        <option value="">— Select a Subject —</option>
+        <option value="INTREG">Integrative Programming & Technologies</option>
+        <option value="WEBSYTEM">Web Systems and Technologies</option>
+        <option value="DATAINFO">Data and Information Visualization (Elective 2)</option>
+      </select>
+      
+      <div id="activitiesList" class="activities-list">
+        <!-- Activity items loaded here via JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Artworks section header -->
+<section id="artWorks" class="content-section2">
+  <div class="image-container">
+    <img src="Assets/images/CREATIONPAGE.png" alt="Art Projects">
+  </div>
+</section>
+
+<!-- Gallery items with modals for details -->
+<section>
+  <div class="gallery-grid">
+    <div class="gallery-item" data-title="2022 WBC group poster" data-desc="My first group poster for friends (WCB), featuring multiple portraits in my style.">
+      <div class="gallery-image-container">
+        <img src="Assets/grid gallery/walngbraincell 2022.png" alt="wbc">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="2024 WBC group poster (Scott Pilgrim style)" data-desc="Remade poster with friends reimagined as Scott Pilgrim characters.">
+      <div class="gallery-image-container">
+        <img src="Assets/grid gallery/walang mga braincell vs year 2024 STICKER.png" alt="wbc">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="DOODLELA" data-desc="Brand mascot inspired by my childhood drawings and Charlie Brown.">
+      <div class="gallery-image-container">
+        <img src="Assets/grid gallery/mascot.png" alt="wbc">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="SHS Graduation Portrait (2023)" data-desc="Half-portrait in Gorillaz-inspired style; printed as keepsakes for classmates.">
+      <div class="gallery-image-container">
+        <img src="Assets/grid gallery/graduationpic.png" alt="wbc">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Lightbox/modal for enlarged view & info -->
+    <div id="imageModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-image-container">
+          <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-text">
+          <h3 id="modalTitle">Title</h3>
+          <p id="modalDesc">Description</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Artwork showcase section 1 -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/CREATIONCONTENT.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- Logo design showcase -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/MA LOGO.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- Art wall/mural showcase -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/ARTWALL.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- Blank canvas/concept piece -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/BLANKO.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
