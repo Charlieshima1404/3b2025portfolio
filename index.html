@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <!-- THE LITTLE ARROW-->
+<section id="hero">
+  <img src="Assets/images/arrow.png" alt="Scroll Down" id="scrollArrow" class="arrow-image">
+</section>
+
+<!-- ITS MEEE! -->
+<section id="secondPage" class="content-section"> 
+  <div class="image-container">
+    <img src="Assets/images/2NDPAGE.png" alt="Portfolio Image">
+  </div>
+</section>
+
+
+<!-- NAVIGATE MY CONTENT BIATCH -->
+<section id="fourthPage" class="content-section">
+  <div class="nav-buttons-container">
+  <img src="Assets/images/schoolarchivesign.png" 
+       class="nav-button school-archive-btn" 
+       data-target="schoolArchive">
+
+  <img src="Assets/images/CREATIONSIGN.png" 
+       class="nav-button art-works-btn" 
+       data-target="artWorks">
+</div>
+
+</section>
+
+
+<!-- School Archive Section (Target) -->
+
+<section id="schoolArchive" class="content-section">
+  <div class="image-container">
+    <img src="Assets/images/schoolarchivepage.png" alt="School Projects">
+  </div>
+
+  <!-- ✅ ONLY PLACE THE FOLDER BOX HERE -->
+  <div class="folder-box">
+    <div class="folder-content">
+      <select id="subjectSelect" class="subject-dropdown">
+        <option value="">— Select a Subject —</option>
+        <option value="INTREG">Integrative Programming & Technologies</option>
+        <option value="WEBSYTEM">Web Systems and Technologies</option>
+        <option value="DATAINFO">Data and Information Visualization (Elective 2)</option>
+      </select>
+      
+      <div id="activitiesList" class="activities-list">
+        <!-- Items will appear here dynamically -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--gallery of ARTTTTSSSS!!!-->
+<!-- Art Works Section (Target) -->
+<section id="artWorks" class="content-section2">
+  <div class="image-container">
+    <img src="Assets/images/CREATIONPAGE.png" alt="Art Projects">
+  </div>
+</section>
+
+  <!-- Gallery Grid -->
+<section><div class="gallery-grid">
+  <div class="gallery-item" data-title="2022 WBC group poster " data-desc="This was my first poster, made as a gift for my friend group, WCB. It was also the first time I drew several people together in one portrait, using my own style.">
+    <div class="gallery-image-container">
+      <img src="Assets/grid gallery/walngbraincell 2022.png" alt="wbc">
+      <div class="gallery-overlay"></div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-title="2024 WBC group poster (WALANG MGA BARINCELL VERSUS THE 2024)" data-desc="I remade our friend group poster but with a fun twist: this time, we’re reimagined as characters from Scott Pilgrim vs. The World!" >
+    <div class="gallery-image-container">
+      <img src="Assets/grid gallery/walang mga braincell vs year 2024 STICKER.png" alt="wbc">
+      <div class="gallery-overlay"></div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-title="DOODLELA" data-desc="This is Doodlela, my brand’s mascot a character inspired by my own childhood creation, with a playful nod to Charlie Brown from Peanuts.">
+    <div class="gallery-image-container">
+      <img src="Assets/grid gallery/mascot.png" alt="wbc">
+      <div class="gallery-overlay"></div>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-title="SINIOR HIGHSCOOL graduation picture 2023" data-desc="This is half of my graduation portrait. I drew it this way to show my style and skills not just to be different, but to make it meaningful. I gave prints to my high school classmates as a keepsake. The look is inspired by Gorillaz, a band I admire for their bold, stylized art.">
+    <div class="gallery-image-container">
+      <img src="Assets/grid gallery/graduationpic.png" alt="wbc">
+      <div class="gallery-overlay"></div>
+    </div>
+  </div>
+
+  <!-- Modal Popup -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-text">
+        <h3 id="modalTitle">Title</h3>
+        <p id="modalDesc">Description</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ma workss! -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/CREATIONCONTENT.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- MA LOGO -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/MA LOGO.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- MA LOGO -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/ARTWALL.png" alt="Portfolio Image">
+  </div>
+</section>
+
+<!-- MA LOGO -->
+<section id="creation" class="content-section2"> 
+  <div class="image-container">
+    <img src="Assets/images/BLANKO.png" alt="Portfolio Image">
+  </div>
+</section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

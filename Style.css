@@ -1,0 +1,530 @@
+/* 
+ * GLOBAL RESET & BASE STYLES
+ * --------------------------------------------------
+ * Normalize default browser spacing and set up consistent box model.
+ * Define base typography and page layout properties.
+ */
+
+/* Reset all sections */
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Also reset body margin if needed */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+}
+
+
+/*
+ * SECTION 1: HERO (LANDING PAGE)
+ * --------------------------------------------------
+ * Full-viewport hero section with centered downward-facing arrow indicator.
+ * Uses a background image with cover scaling and centered positioning.
+ */
+
+#hero {
+  height: 100vh;                     /* Full viewport height */
+  display: flex;
+  justify-content: center;           /* Horizontally center content */
+  align-items: flex-end;             /* Align arrow to bottom of viewport */
+  background-image: url('Assets/images/1STPAGE.png');
+  background-size: cover;            /* Scale image to cover entire container */
+  background-position: center;       /* Center image within container */
+  background-repeat: no-repeat;      /* Prevent tiling */
+  padding-bottom: 30px;              /* Optional: Add slight spacing under arrow */
+}
+
+
+/*
+ * ANIMATED ARROW INDICATOR (HERO SECTION)
+ * --------------------------------------------------
+ * Visual cue to scroll down. Bounces infinitely and lifts slightly on hover.
+ */
+
+.arrow-image {
+  width: 80px;                       /* Fixed size for visual consistency */
+  cursor: pointer;                   /* Indicates interactivity */
+  animation: bounce 2s infinite;     /* Apply infinite bounce animation */
+  transition: transform 0.3s ease;   /* Smooth hover lift effect */
+}
+
+.arrow-image:hover {
+  transform: translateY(-5px);       /* Gentle lift on hover */
+}
+
+/* Bounce animation keyframes for natural motion */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);        /* Rest position */
+  }
+  40% {
+    transform: translateY(-20px);    /* Maximum upward displacement */
+  }
+  60% {
+    transform: translateY(-10px);    /* Mid-bounce rebound */
+  }
+}
+
+
+/*
+ * SHARED STYLES FOR CONTENT SECTIONS (PAGES 2 & 3)
+ * --------------------------------------------------
+ * Reusable layout for centered image-based content pages.
+ */
+section {
+  margin: 0;
+  padding: 0;
+}
+.content-section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;       
+            /* Ensures full viewport height even if content is small */
+}
+
+.content-section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0h;       
+            /* Ensures full viewport height even if content is small */
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: 100%;           /* ← Forces image to fill container height */
+  object-fit: cover;       /* Crops image to fill without distortion */
+  object-position: center; /* Keeps important parts centered */
+  border-radius: 0;
+  display: block;          /* Removes inline whitespace under image */
+}
+
+
+/*
+ * PAGE-SPECIFIC BACKGROUNDS
+ * --------------------------------------------------
+ * Subtle visual distinction between sequential content pages.
+ */
+
+#secondPage {
+  background-color: #111;            /* Slightly lighter than pure black */
+}
+
+#thirdPage {
+  background-color: #0a0a0a;         /* Slightly darker than #secondPage */
+}
+
+
+/*
+ * PAGE 4: NAVIGATION HUB (INTERACTIVE CHOICES SCREEN)
+ * --------------------------------------------------
+ * Full-screen background with two absolute-positioned buttons.
+ * Includes overlay for improved text/button contrast.
+ */
+
+#fourthPage {
+  max-width: 100%;                   /* Responsive: prevents overflow */
+  height: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;                /* Required for absolutely positioned children & overlay */
+  
+  background-image: url('Assets/images/contentpage.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+/* Semi-transparent overlay to improve button readability (behind buttons) */
+#fourthPage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   /* Dark tint for contrast */
+  z-index: 1;                            /* Places behind buttons */
+}
+
+
+/*
+ * NAVIGATION BUTTONS — SHARED & INDIVIDUAL STYLES
+ * --------------------------------------------------
+ * Two large CTA buttons with hover/press feedback.
+ * Positioned *absolutely* to align precisely with background design.
+ * Z-index ensures visibility above overlay.
+ */
+
+/* Shared base style for both buttons */
+.nav-button {
+  width: 575px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 2;                          /* Ensures buttons appear above overlay */
+}
+
+/* Button 1: School Archive — Precisely aligned to match background layout */
+.school-archive-btn {
+  top: 16%;
+  left: 48%;
+  transform: translate(-51%, 27%);    /* Custom offset for perfect alignment */
+}
+
+/* Hover & active (click) states for School Archive */
+.school-archive-btn:hover {
+  transform: translate(-51%, 27%) translateY(-5px) scale(1.02);
+}
+.school-archive-btn:active {
+  transform: translate(-51%, 27%) translateY(2px) scale(0.98);
+}
+
+/* Button 2: Art Works — Centered horizontally/vertically */
+.art-works-btn {
+  top: 56%;
+  left: 52.5%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hover & active (click) states for Art Works */
+.art-works-btn:hover {
+  transform: translate(-50%, -50%) translateY(-5px) scale(1.02);
+}
+.art-works-btn:active {
+  transform: translate(-50%, -50%) translateY(2px) scale(0.98);
+}
+
+
+/*
+ * RESPONSIVE ADJUSTMENTS
+ * --------------------------------------------------
+ * Minor tweaks for smaller screens (e.g., tablets & mobile).
+ * Note: More comprehensive mobile support may be needed (e.g., button scaling).
+ */
+
+@media (max-width: 768px) {
+  /* Example adjustments — extend as needed for full mobile optimization */
+  .portfolio-box h1 {
+    font-size: 2rem;
+  }
+
+  .arrow-image {
+    width: 45px;                      /* Smaller arrow on mobile */
+  }
+
+  /* Suggestion: Scale or reposition buttons on small screens */
+  .nav-button {
+    width: 90vw;                      /* Responsive width */
+    max-width: 400px;                 /* Prevent oversized buttons */
+  }
+
+  .school-archive-btn,
+  .art-works-btn {
+    left: 50%;
+    transform: translateX(-50%);     /* Simpler centering on mobile */
+  }
+
+  .school-archive-btn { top: 35%; }   /* Adjusted vertical spacing */
+  .art-works-btn { top: 65%; }
+}
+
+#schoolArchive {
+  position: relative; /* ← Critical! */
+}
+/* Centered Yellow Folder Box */
+.folder-box {
+  position: absolute;
+  top: 71.4%;
+  left: 52.1%;
+  transform: translate(-50%, -50%) rotate(-1deg); /* ← Add this! */
+  width: 550px;
+  height: 700px;
+  background: #d4af3700; /* Gold color */
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0);
+  z-index: 2;
+  overflow: hidden;
+  font-family:cursive;
+  flex-direction: column;
+  transform:rotateY('angle')
+}
+
+
+
+/* Scrollable Content Area */
+.folder-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Subject Items */
+.subject-item {
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  transition: background 0.2s ease, transform 0.15s ease;
+  cursor: default;
+  border-left: 4px solid #b8860b; /* Accent line */
+}
+
+.subject-item:hover {
+  background: rgba(255, 255, 255, 0);
+  transform: translateX(4px);
+  border-left: 4px solid #d4af37;
+}
+
+/* Custom Scrollbar (Modern Browsers) */
+.folder-content::-webkit-scrollbar {
+  width: 8px;
+}
+.folder-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.541);
+  border-radius: 4px;
+}
+.folder-content::-webkit-scrollbar-thumb {
+  background: #b8870b00;
+  border-radius: 4px;
+}
+.folder-content::-webkit-scrollbar-thumb:hover {
+  background: #d4af3700;
+}
+
+/* Dropdown Styling */
+.subject-dropdown {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 1.2rem;
+  background: rgba(255, 255, 255, 0);
+  color: #000;
+  font-weight: bold;
+  border: 2px solid #b8870b00;
+  font-family:cursive;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  /* 👇 Add these for dropdown list appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.subject-dropdown option {
+  background: #000000;       /* Gold background for all options */
+  color: #ffffff;               /* Black text */
+  padding: 10px 16px;
+}
+
+.subject-dropdown:hover{
+  background: #00000091;
+}
+.subject-dropdown:focus {
+  background: rgba(255, 255, 255, 0);
+  border-color: #d4af3700;
+}
+
+/* Activities List */
+.activities-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.5rem 0;
+}
+
+.activity-item {
+  padding: 0.0rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  border-left: 4px solid #b8870b00;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.activity-item:hover {
+  background: rgba(0, 0, 0, 0.271);
+  transform: translateX(4px);
+  border-left-color: #d4af3700;
+}
+
+/* Gallery Grid — Uniform, Fixed-Size Items */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px;
+  cursor: pointer;
+  height: 250px; /* ← FIXED HEIGHT — critical */
+  background: #ffffff00; /* Optional: hides any white space */
+}
+
+/* Image Wrapper */
+.gallery-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* ← Matches .gallery-item */
+  overflow: hidden;
+}
+
+.gallery-image-container img {
+  width: 100%;
+  height: 100%; /* ← Fills the container */
+  object-fit: cover; /* Crops to fill without distortion */
+  transition: transform 0.3s ease;
+}
+
+/* Overlay */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Hover Effect */
+.gallery-item:hover .gallery-overlay {
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+.gallery-item:hover .gallery-image-container img {
+  transform: scale(1.05);
+}
+
+/* Modal Popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.689);
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+}
+
+.modal-content {
+  background: #000000;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0);
+  display: flex;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fffafa;
+  cursor: pointer;
+  z-index: 10;
+  background: rgba(255, 202, 30, 0.8);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.close:hover {
+  background: rgba(255,255,255,1);
+}
+
+.modal-image-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+  background: #f0f0f000;
+}
+
+.modal-text {
+  flex: 0 0 300px;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 2rem;
+  overflow-y: auto;
+  background: #fafafa;
+  border-left: 2px solid #eee;
+}
+
+.modal-text h3 {
+  margin-top: 0;
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+.modal-text p {
+  color: #000000;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    max-width: 95vw;
+  }
+  .modal-text {
+    flex: 0 0 auto;
+    max-height: 30vh;
+  }
+}
